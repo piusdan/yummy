@@ -1,0 +1,35 @@
+.view {
+    background: url("../images/splash.jpg")no-repeat center center;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #100E0E;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: rgb(10, 10, 9);
+    }
+}
+.login-register {
+    background: url("../images/splash.jpg")no-repeat center center;
+    background-size: cover;
+}
+body, html {
+    height: 100%;
+}
+.recipes-list {
+    padding-top: 100px;
+}
+.recipes-list .list-group-item {
+    border-left: 0px;
+    border-right: None;
+}
+.recipe-badge {
+    margin: 2px;
+}
