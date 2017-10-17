@@ -3,7 +3,6 @@ from celery import Celery
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
-from celery import Celery
 from raven.contrib.flask import Sentry
 
 from config import Config, config
