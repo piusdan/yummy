@@ -1,12 +1,15 @@
 # -*- coding:utf-8 -*-
-
+from celery import Celery
 from flask import Flask
+from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
 from celery import Celery
 from raven.contrib.flask import Sentry
 
-from app.config import config, Config
+from config import Config, config
 
-
+db = SQLAlchemy()
+bootstrap = Bootstrap()
 sentry = Sentry(
     dsn="https://a88a0c9e894a45bc8a6c3ad872d22c2e:"
         "f5dcef4d47544b62a68b0d0501235366@sentry.io/227387")
@@ -19,10 +22,15 @@ def create_app(config_name):
     :rtype: Flask application instance
     """
 
+    # create flaks instance
     app = Flask(__name__)
+    # apply configurations
     app.config.from_object(config[config_name])
-
-    
+    # initialise database
+    db.init_app(app)
+    # intialise bootstrap for ui
+    bootstrap.init_app(app)
+    # intialise sentry for logging 
     sentry.init_app(app, logging=True)
 
     # register blueprints
