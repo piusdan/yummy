@@ -18,7 +18,5 @@ class APITestCase(unittest.TestCase):
         self.app_context.pop()
 
     def test_index(self):
-        resp = self.client.get(url_for('api.index'))
+        resp = self.client.get(url_for('main.index'))
         self.assertTrue(resp.status_code == 200)
-        json_resp = json.loads(resp.data.decode('utf-8'))
-        self.assertTrue(json_resp['body'] == "App is working!")
