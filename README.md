@@ -28,11 +28,8 @@ Create and manage your recipes on the fly
 
           $ pip install requirements.txt           # download and install project's dependancies
 
-4. Initialise your database
 
-        $ python manage.py db init && python manage.py db migrate && python manage.py db upgrade
-
-5. Run your server
+4. Run your server
 
           $ chmod +x ./start.sh && ./start.sh         # starts project
           # This command starts your server on https://localhost:8000

@@ -1,13 +1,10 @@
 # -*- coding:utf-8 -*-
-from celery import Celery
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from flask_sqlalchemy import SQLAlchemy
 from raven.contrib.flask import Sentry
 
 from config import Config, config
 
-db = SQLAlchemy()
 bootstrap = Bootstrap()
 sentry = Sentry(
     dsn="https://a88a0c9e894a45bc8a6c3ad872d22c2e:"
@@ -25,8 +22,6 @@ def create_app(config_name):
     app = Flask(__name__)
     # apply configurations
     app.config.from_object(config[config_name])
-    # initialise database
-    db.init_app(app)
     # intialise bootstrap for ui
     bootstrap.init_app(app)
     # intialise sentry for logging 
