@@ -17,12 +17,14 @@ branches:
   except:
     - legacy
     - dev
+    - challenge-1
 
 # whitelist
 branches:
   only:
     - master
     - stable
+    - challenge-2
 
 notifications:
   email:
