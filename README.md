@@ -15,4 +15,4 @@ Create and manage your recipes on the fly
 * The application has currently no test suite provided
 
 ## Demo
-* Demo version of the application can be view here -> https://www.Piusdan.github.io
+* Demo version of the application can be view here -> https://piusdan.github.io/
