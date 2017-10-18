@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "bootstrap/base.html" %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--metas-->
+{% block metas %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+{% endblock %}
 
+<!--title-->
+{% block title %}Welcome To | Yummy Recipes - Home of Delicacies{% endblock %}
+
+<!-- Favicon-->
+{% block favicon %}
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block styles %}
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
-</head>
+{% endblock %}
 
-<!--Main Navigation-->
-
-<body>
-
+{% block content %}
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
         <a class="navbar-brand" href="#"><strong>Yummy Recipes</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -25,20 +31,16 @@
                 </button>
     </nav>
 
-    <div class="view intro hm-black-light d-flex justify-content-center" style="">
-        <div class="full-bg-img flex-center">
-            <div class="container text-center white-text wow fadeInUp">
-                <h2>Welcome to Yummy Recipes</h2>
-                <h5>Your home of delicacies</h5>
-                <br>
-                <a type="button" class="btn btn-lg btn-light-green btn-rounded" role="button" href="ui/login.html">
-                            Sign in or Join to Manage your Recipes
-                    </a>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!--Main Navigation-->
+
+        <section class="content">
+            {% include '_get_flashed_messages.html' %}
+
+            {% block page_content %} Your content here {% endblock %}
+
+        </section>
+{% endblock %}
+
+{% block scripts %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -48,7 +50,4 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+{% endblock %}

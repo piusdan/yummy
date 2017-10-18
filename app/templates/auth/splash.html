@@ -1,0 +1,17 @@
+{% extends "auth/splash_base.html" %}
+
+{% block page_content %}
+
+    <div class="view intro hm-black-light d-flex justify-content-center" style="">
+        <div class="full-bg-img flex-center">
+            <div class="container text-center white-text wow fadeInUp">
+                <h2>Welcome to Yummy Recipes</h2>
+                <h5>Your home of delicacies</h5>
+                <br>
+                <a type="button" class="btn btn-lg btn-light-green btn-rounded" role="button" href="{{ url_for('auth.login') }}">
+                            Sign in or Join to Manage your Recipes
+                    </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

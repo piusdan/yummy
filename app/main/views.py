@@ -5,11 +5,11 @@ from app.main import main
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('auth/splash.html')
 
 @main.route('/recipe')
 def get_recipes():
-    return True
+    return render_template('main/main.html')
 
 @main.route('/recipe/<int:id>')
 def get_recipe():
